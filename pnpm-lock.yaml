@@ -7,6 +7,7 @@ dependencies:
   '@angular/platform-browser': 11.2.8_c882e4bab2833d412204c22223da76d9
   '@angular/platform-browser-dynamic': 11.2.8_074f4ae936f7fb3c500fe22abf9da2a7
   '@angular/router': 11.2.8_2a0857f181191af973187c2811eefad4
+  angular-in-memory-web-api: 0.11.0_ca8d3fac15f277c2f25d4d83a6da0551
   rxjs: 6.6.7
   tslib: 2.1.0
   zone.js: 0.11.4
@@ -1817,6 +1818,18 @@ packages:
     dev: true
     resolution:
       integrity: sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+  /angular-in-memory-web-api/0.11.0_ca8d3fac15f277c2f25d4d83a6da0551:
+    dependencies:
+      '@angular/common': 11.2.8_@angular+core@11.2.8+rxjs@6.6.7
+      '@angular/core': 11.2.8_rxjs@6.6.7+zone.js@0.11.4
+      rxjs: 6.6.7
+    dev: false
+    peerDependencies:
+      '@angular/common': '>=8.0.0'
+      '@angular/core': '>=8.0.0'
+      rxjs: ^6.0.0
+    resolution:
+      integrity: sha512-QV1qYHm+Zd+wrvlcPLnAcqqGpOmCN1EUj4rRuYHpek8+QqFFdxBNuPZOJCKvU7I97z5QSKHsdc6PNKlpUQr3UA==
   /ansi-colors/3.2.4:
     dev: true
     engines:
@@ -9768,6 +9781,7 @@ specifiers:
   '@angular/router': ~11.2.7
   '@types/jasmine': ~3.6.0
   '@types/node': ^12.11.1
+  angular-in-memory-web-api: ^0.11.0
   codelyzer: ^6.0.0
   jasmine-core: ~3.6.0
   jasmine-spec-reporter: ~5.0.0
