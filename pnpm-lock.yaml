@@ -7,6 +7,7 @@ dependencies:
   '@angular/platform-browser': 11.2.8_c882e4bab2833d412204c22223da76d9
   '@angular/platform-browser-dynamic': 11.2.8_074f4ae936f7fb3c500fe22abf9da2a7
   '@angular/router': 11.2.8_2a0857f181191af973187c2811eefad4
+  '@ngworker/lumberjack': 2.0.1_@angular+core@11.2.8
   angular-in-memory-web-api: 0.11.0_ca8d3fac15f277c2f25d4d83a6da0551
   rxjs: 6.6.7
   tslib: 2.1.0
@@ -1397,6 +1398,15 @@ packages:
       webpack: ^4.0.0
     resolution:
       integrity: sha512-bT7r+Sjp6C/2iizJKJ8pFMma+OlfY7KZvxlWDZBNQuXRnnCdrkD0P3vXkQCVpM2aLiFueSxwBNjh64cjcnQkHw==
+  /@ngworker/lumberjack/2.0.1_@angular+core@11.2.8:
+    dependencies:
+      '@angular/core': 11.2.8_rxjs@6.6.7+zone.js@0.11.4
+      tslib: 2.1.0
+    dev: false
+    peerDependencies:
+      '@angular/core': '>=9.0.7'
+    resolution:
+      integrity: sha512-xUaYbvvCcfrjC8NsKvG1M57TePuhYmPZA/jm0Wglxck5Idx2x/Ni3Zco3MhSN0660JyhYUCq8fzUzd9qpBnnOg==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -9779,6 +9789,7 @@ specifiers:
   '@angular/platform-browser': ~11.2.7
   '@angular/platform-browser-dynamic': ~11.2.7
   '@angular/router': ~11.2.7
+  '@ngworker/lumberjack': 2.0.1
   '@types/jasmine': ~3.6.0
   '@types/node': ^12.11.1
   angular-in-memory-web-api: ^0.11.0
