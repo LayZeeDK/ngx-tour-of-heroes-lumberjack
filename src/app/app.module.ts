@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { LumberjackLevel, LumberjackModule } from '@ngworker/lumberjack';
+import { LumberjackModule } from '@ngworker/lumberjack';
 import { LumberjackConsoleDriverModule } from '@ngworker/lumberjack/console-driver';
 import { LumberjackHttpDriverModule } from '@ngworker/lumberjack/http-driver';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -30,18 +30,9 @@ import { MessagesComponent } from './messages/messages.component';
       dataEncapsulation: false,
     }),
 
-    LumberjackModule.forRoot({
-      levels: [
-        LumberjackLevel.Critical,
-        LumberjackLevel.Error,
-        LumberjackLevel.Info,
-        LumberjackLevel.Warning,
-      ],
-    }),
+    LumberjackModule.forRoot(),
 
-    LumberjackConsoleDriverModule.forRoot({
-      levels: [LumberjackLevel.Verbose],
-    }),
+    LumberjackConsoleDriverModule.forRoot(),
 
     LumberjackHttpDriverModule.withOptions({
       origin: 'Tour of Heroes application',
