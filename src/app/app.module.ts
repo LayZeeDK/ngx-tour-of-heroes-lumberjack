@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { LumberjackModule } from '@ngworker/lumberjack';
+import { LumberjackLog, LumberjackModule } from '@ngworker/lumberjack';
 import { LumberjackConsoleDriverModule } from '@ngworker/lumberjack/console-driver';
 import { LumberjackHttpDriverModule } from '@ngworker/lumberjack/http-driver';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -30,7 +30,15 @@ import { MessagesComponent } from './messages/messages.component';
       dataEncapsulation: false,
     }),
 
-    LumberjackModule.forRoot(),
+    LumberjackModule.forRoot({
+      format: (log: LumberjackLog): string => {
+        const formattedScope = log.scope ? ` [${log.scope} 🐝👨]` : '';
+
+        return `${log.level} ${new Date(
+          log.createdAt
+        ).toISOString()}${formattedScope} ${log.message}`;
+      },
+    }),
 
     LumberjackConsoleDriverModule.forRoot(),
 
