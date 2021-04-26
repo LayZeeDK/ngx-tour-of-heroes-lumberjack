@@ -16,7 +16,7 @@ const createMessagesDriver = ({
   config,
   isLumberjackModuleImportedFirst = true,
 }: {
-  config?: messagesDriverConfig;
+  config?: MessagesDriverConfig;
   isLumberjackModuleImportedFirst?: boolean;
 } = {}) => {
   TestBed.configureTestingModule({
@@ -27,7 +27,9 @@ const createMessagesDriver = ({
     ],
   });
 
-  const [messagesDriver] = (TestBed.inject(lumberjackLogDriverToken) as unknown) as LumberjackLogDriver[];
+  const [messagesDriver] = (TestBed.inject(
+    lumberjackLogDriverToken
+  ) as unknown) as LumberjackLogDriver[];
 
   return messagesDriver;
 };

@@ -16,7 +16,10 @@ describe('messagesDriverConfigToken', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         providers: [
-          { provide: lumberjackLogDriverConfigToken, useValue: verboseDriverConfig },
+          {
+            provide: lumberjackLogDriverConfigToken,
+            useValue: verboseDriverConfig,
+          },
           { provide: messagesDriverConfigToken, useValue: debugDriverConfig },
         ],
       });
@@ -25,7 +28,7 @@ describe('messagesDriverConfigToken', () => {
     it('then that config is resolved', () => {
       const actualDriverConfig = TestBed.inject(messagesDriverConfigToken);
 
-      expect(actualDriverConfig).toStrictEqual(debugDriverConfig);
+      expect(actualDriverConfig).toBe(debugDriverConfig);
     });
   });
 });
