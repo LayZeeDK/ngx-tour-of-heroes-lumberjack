@@ -6,39 +6,43 @@ import {
   LumberjackLogPayload,
 } from '@ngworker/lumberjack';
 
+import { MessageService } from '../../message.service';
 import { messagesDriverConfigToken } from '../configuration/messages-driver-config.token';
 
 /**
- * Document your driver behavior
- *
+ * Adds formatted logs to the message service.
  */
 @Injectable()
 export class MessagesDriver<TPayload extends LumberjackLogPayload | void = void>
   implements LumberjackLogDriver<TPayload> {
   static driverIdentifier = 'MessagesDriver';
-  constructor(@Inject(messagesDriverConfigToken) readonly config: LumberjackLogDriverConfig) {}
+  constructor(
+    @Inject(messagesDriverConfigToken)
+    readonly config: LumberjackLogDriverConfig,
+    private messageService: MessageService
+  ) {}
 
-  logCritical({ formattedLog, log }: LumberjackLogDriverLog<TPayload>): void {
-    // implement your driver
+  logCritical({ formattedLog }: LumberjackLogDriverLog<TPayload>): void {
+    this.messageService.add(formattedLog);
   }
 
-  logDebug({ formattedLog, log }: LumberjackLogDriverLog<TPayload>): void {
-    // implement your driver
+  logDebug({ formattedLog }: LumberjackLogDriverLog<TPayload>): void {
+    this.messageService.add(formattedLog);
   }
 
-  logError({ formattedLog, log }: LumberjackLogDriverLog<TPayload>): void {
-    // implement your driver
+  logError({ formattedLog }: LumberjackLogDriverLog<TPayload>): void {
+    this.messageService.add(formattedLog);
   }
 
-  logInfo({ formattedLog, log }: LumberjackLogDriverLog<TPayload>): void {
-    // implement your driver
+  logInfo({ formattedLog }: LumberjackLogDriverLog<TPayload>): void {
+    this.messageService.add(formattedLog);
   }
 
-  logTrace({ formattedLog, log }: LumberjackLogDriverLog<TPayload>): void {
-    // implement your driver
+  logTrace({ formattedLog }: LumberjackLogDriverLog<TPayload>): void {
+    this.messageService.add(formattedLog);
   }
 
-  logWarning({ formattedLog, log }: LumberjackLogDriverLog<TPayload>): void {
-    // implement your driver
+  logWarning({ formattedLog }: LumberjackLogDriverLog<TPayload>): void {
+    this.messageService.add(formattedLog);
   }
 }
