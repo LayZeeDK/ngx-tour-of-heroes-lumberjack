@@ -14,6 +14,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { InMemoryDataService } from './in-memory-data.service';
+import { MessagesDriverModule } from './messages/configuration/messages-driver.module';
 import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
@@ -51,7 +52,7 @@ import { MessagesComponent } from './messages/messages.component';
       storeUrl: 'https://hookb.in/YV7M3dlJqrIo77ym38W2',
     }),
 
-    // MessagesDriverModule.forRoot(),
+    MessagesDriverModule.forRoot(),
   ],
   declarations: [
     AppComponent,
